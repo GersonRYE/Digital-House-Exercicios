@@ -1,4 +1,4 @@
-package LacosRepeticao;
+package ExerciciosLacosRepeticao;
 
 import java.util.Scanner;
 
@@ -21,20 +21,23 @@ public class Exercicio4While {
 
 		Scanner leia = new Scanner(System.in);
 
-		int qtd = 0, idade = 0, m = 0, f = 0, o = 0, sexo = 0, comportamento = 0, pc = 0, pn = 1, pa = 1, mn = 0, ha = 0, oc = 0, c40 = 0, c18 = 0;
-		boolean validandoIdade = true; //validandoSexo = true, validandoEmocional = true;
+		int qtd = 0, idade = -1, m = 0, f = 0, o = 0, sexo = 0, comportamento = 0, pc = 0, pn = 1, pa = 1, mn = 0,
+				ha = 0, oc = 0, c40 = 0, c18 = 0, i = 0;
+		
 
-		while (qtd < 3) {
+		while (qtd < 2) {
 
-			while (validandoIdade) {
-				System.out.println("Digite a " + (qtd + 1) + "º idade: ");
+			while (idade < 0) {
+				System.out.println("Digite a " + ++i + "º idade: ");
 				idade = leia.nextInt();
+
 				if (idade >= 0) {
+
 					System.out.println("Carregando...");
-					break;
 				} else {
 
 					System.out.println("Idade Inválida!!!");
+					i--;
 				}
 
 			}
@@ -90,41 +93,39 @@ public class Exercicio4While {
 			}
 
 			qtd++;
-			
-			if(sexo == 2 && comportamento == 2) {
+
+			if (sexo == 2 && comportamento == 2) {
 				mn++;
 			}
-			
-			if(sexo == 1 && comportamento == 3) {
+
+			if (sexo == 1 && comportamento == 3) {
 				ha++;
 			}
-			
-			if(sexo == 3 && comportamento == 1) {
+
+			if (sexo == 3 && comportamento == 1) {
 				oc++;
 			}
-			if(comportamento == 1 && idade >= 40) {
+			if (comportamento == 1 && idade >= 40) {
 				c40++;
 			}
-			if(comportamento == 1 && idade <= 18) {
+			if (comportamento == 1 && idade <= 18) {
 				c18++;
 			}
-			
+
 			idade = -1;
 			sexo = 0;
 			comportamento = 0;
+
 			
-leia.close();
 
 		}
-		
+		leia.close();
 		System.out.println("Quantidade de pessoas calmas: " + pc);
 		System.out.println("Quantidade de mulheres nervosas: " + mn);
 		System.out.println("Quantidade de homens agressivos: " + ha);
 		System.out.println("Quantidade de outros calmos: " + oc);
 		System.out.println("Quantidade de pessoas com mais de 40 anos calmos " + c40);
 		System.out.println("Quantidade de pessoas com menos de 18 anos calmos: " + c18);
-		
-		
 
 	}
 
