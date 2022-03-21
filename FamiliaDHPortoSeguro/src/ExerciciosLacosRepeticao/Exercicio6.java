@@ -12,7 +12,7 @@ public class Exercicio6 {
 
 		Scanner leia = new Scanner(System.in);
 
-		double tecla = 0, soma = 0, i = 0, media = 0;
+		double tecla, soma = 0, i = 0, media = 0;
 		String valores = "";
 
 		do {

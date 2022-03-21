@@ -16,6 +16,7 @@ public class Exercicio3While {
 			if (idade >= 0) {
 				System.out.println("Digite sua idade ou -99 para sair: ");
 				idade = leia.nextInt();
+
 			} else {
 				System.out.println("Idade inválida!!!");
 				idade = 0;
